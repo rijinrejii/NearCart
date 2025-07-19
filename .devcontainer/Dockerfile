@@ -45,6 +45,9 @@ RUN git clone https://github.com/flutter/flutter.git -b stable $FLUTTER_HOME \
     && chown -R vscode:vscode $FLUTTER_HOME \
     && chmod -R 755 $FLUTTER_HOME
 
+# Trust Flutter directory for git to avoid "dubious ownership"
+RUN git config --global --add safe.directory $FLUTTER_HOME
+
 # Pre-download Flutter dependencies
 RUN flutter precache \
     && flutter config --android-sdk $ANDROID_SDK_ROOT \
