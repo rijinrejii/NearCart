@@ -25,7 +25,7 @@
     }
   },
   "forwardPorts": [8080, 3000, 5000],
-  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "postCreateCommand": "chmod +x .devcontainer/setup.sh && .devcontainer/setup.sh",
   "remoteUser": "vscode",
   "features": {
     "ghcr.io/devcontainers/features/common-utils:2": {
