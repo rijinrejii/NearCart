@@ -13,7 +13,9 @@
     "dartdoc",    // ✅ Add this
     "dotenv",      // ✅ Add this
     "dearmor",
-    "keyrings"
+    "keyrings",
+    "bradlc",
+    "resolv"
     
   ],
   "terminal.integrated.shell.linux": "/bin/bash",
