@@ -11,8 +11,8 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 Project Lead : rijin reji
 Email: rijinreji.here@gmail.com
 
-Roadmap : ('''  WILL BE UPLOAD SOON ''')
+Roadmap : ('''  Will be upload sooN ''')
 
-STRUCTURE : ('''  WILL BE UPLOAD SOON ''')
+Structure : ('''  Will be upload soonN ''')
 
 Built with ❤️ by the NearCart Team
