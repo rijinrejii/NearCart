@@ -11,7 +11,10 @@
     "pubspec",
     "noninteractive",
     "dartdoc",    // ✅ Add this
-    "dotenv"      // ✅ Add this
+    "dotenv",      // ✅ Add this
+    "dearmor",
+    "keyrings"
+    
   ],
   "terminal.integrated.shell.linux": "/bin/bash",
   "CHROME_EXECUTABLE": "/usr/bin/google-chrome"
