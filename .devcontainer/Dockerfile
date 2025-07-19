@@ -6,6 +6,8 @@ ENV FLUTTER_HOME=/usr/local/flutter
 ENV PATH="$FLUTTER_HOME/bin:$FLUTTER_HOME/bin/cache/dart-sdk/bin:$PATH"
 ENV PUB_CACHE=/usr/local/flutter/.pub-cache
 ENV FLUTTER_ROOT=$FLUTTER_HOME
+ENV ANDROID_SDK_ROOT=/usr/local/android-sdk
+ENV PATH="$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/platform-tools:$PATH"
 
 # Install dependencies
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
@@ -16,7 +18,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
         xz-utils \
         zip \
         libglu1-mesa \
-        openjdk-8-jdk \
+        openjdk-17-jdk \
         wget \
         clang \
         cmake \
@@ -28,16 +30,13 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get autoremove -y && apt-get clean -y
 
 # Install Android SDK
-ENV ANDROID_SDK_ROOT=/usr/local/android-sdk
-ENV PATH="$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/platform-tools:$PATH"
-
 RUN mkdir -p $ANDROID_SDK_ROOT/cmdline-tools \
     && wget -q https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip -O /tmp/cmdline-tools.zip \
     && unzip /tmp/cmdline-tools.zip -d $ANDROID_SDK_ROOT/cmdline-tools \
     && mv $ANDROID_SDK_ROOT/cmdline-tools/cmdline-tools $ANDROID_SDK_ROOT/cmdline-tools/latest \
     && rm /tmp/cmdline-tools.zip
 
-# Accept Android licenses and install SDK components
+# Accept Android licenses and install components
 RUN yes | sdkmanager --licenses \
     && sdkmanager "platform-tools" "platforms;android-33" "build-tools;33.0.2"
 
