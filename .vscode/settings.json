@@ -1,16 +1,18 @@
 {
-    "cSpell.words": [
-        "devcontainers",
-        "cmdline",
-        "sdkmanager",
-        "libglu",
-        "autoremove",
-        "libstdc",
-        "flutter",
-        "vscode",
-        "pubspec",
-        "noninteractive"
-    ],
-    "terminal.integrated.shell.linux": "/bin/bash",
-    "CHROME_EXECUTABLE": "/usr/bin/google-chrome"
+  "cSpell.words": [
+    "devcontainers",
+    "cmdline",
+    "sdkmanager",
+    "libglu",
+    "autoremove",
+    "libstdc",
+    "flutter",
+    "vscode",
+    "pubspec",
+    "noninteractive",
+    "dartdoc",    // ✅ Add this
+    "dotenv"      // ✅ Add this
+  ],
+  "terminal.integrated.shell.linux": "/bin/bash",
+  "CHROME_EXECUTABLE": "/usr/bin/google-chrome"
 }
