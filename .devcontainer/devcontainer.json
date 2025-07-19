@@ -1,0 +1,46 @@
+{
+  "name": "Flutter Development Environment",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dart-code.dart-code",
+        "dart-code.flutter",
+        "ms-vscode.vscode-json",
+        "redhat.vscode-yaml",
+        "bradlc.vscode-tailwindcss",
+        "streetsidesoftware.code-spell-checker"
+      ],
+      "settings": {
+        "dart.flutterSdkPath": "/usr/local/flutter",
+        "dart.sdkPath": "/usr/local/flutter/bin/cache/dart-sdk",
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+          "source.fixAll": "explicit"
+        }
+      }
+    }
+  },
+  "forwardPorts": [8080, 3000, 5000],
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "remoteUser": "vscode",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": true,
+      "configureZshAsDefaultShell": true,
+      "installOhMyZsh": true,
+      "upgradePackages": true
+    },
+    "ghcr.io/devcontainers/features/git:1": {
+      "ppa": true,
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/node:1": {
+      "nodeGypDependencies": true,
+      "version": "lts"
+    }
+  }
+}
